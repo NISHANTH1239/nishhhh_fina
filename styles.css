@@ -1,0 +1,480 @@
+/* General Body & Container Styling */
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+    background-color: #f8f9fa; /* Very light gray-blue for a soft background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #343a40; /* Darker gray for general text for better readability */
+}
+
+.container {
+    background-color: #ffffff; /* Pure white for main content areas */
+    border-radius: 20px; /* Slightly more rounded for a modern, soft feel */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* A more pronounced, elegant shadow */
+    padding: 50px; /* More generous internal space */
+    width: 100%;
+    max-width: 1000px; /* Wider for more spacious layout */
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    color: #007bff; /* Vibrant primary blue for headings */
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.2em; /* Larger and more impactful main heading */
+    padding-bottom: 20px;
+    border-bottom: 3px solid #e9ecef; /* A subtle but clear divider */
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 2.4em; /* Larger section headings */
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #28a745; /* A fresh green for secondary headings, symbolizing growth/positive finance */
+}
+
+/* Section Styling (Applied uniformly for consistent look) */
+.financial-summary, .expense-entry, .income-entry, .spending-breakdown, .expense-list, .income-list {
+    background-color: #ffffff; /* Sections remain pure white */
+    border-radius: 18px; /* Consistent rounded corners */
+    padding: 35px; /* More padding within sections */
+    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Lighter, broader shadow for sections */
+    border: 1px solid #e0e6ed; /* Very subtle, light border */
+}
+
+/* Financial Summary Grid */
+.financial-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Larger min-width for items */
+    gap: 30px; /* More space between items */
+    background-color: #e9f5ff; /* A very light blue background for the summary area */
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+}
+
+.summary-item {
+    background-color: #fefefe; /* Very slight off-white for items */
+    border: 1px solid #dbe9f5; /* Very subtle border */
+    border-radius: 15px;
+    padding: 25px; /* More padding */
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); /* A clean, soft shadow */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+
+.summary-item:hover {
+    transform: translateY(-7px); /* More pronounced lift */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.summary-item label, .summary-item p {
+    font-size: 1.1em;
+    color: #5a6268; /* Slightly muted color for labels */
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.summary-item span {
+    font-weight: 700;
+    color: #007bff; /* Primary vibrant blue for key numbers */
+    font-size: 1.8em; /* Even larger values */
+    display: block;
+    margin-top: 10px;
+}
+
+/* Input Fields & Buttons */
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+    width: calc(100% - 28px); /* Account for padding and border */
+    padding: 14px; /* More generous padding */
+    margin-bottom: 25px;
+    border: 1px solid #ced4da; /* A softer, more neutral border */
+    border-radius: 12px; /* More rounded inputs */
+    font-size: 1.1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #495057;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.25); /* A clear, vibrant glow */
+    outline: none;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button {
+    background-color: #007bff; /* Vibrant blue for primary actions */
+    color: white;
+    padding: 16px 30px; /* Larger, more prominent buttons */
+    border: none;
+    border-radius: 12px; /* More rounded buttons */
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4); /* More prominent shadow with blue tint */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Slightly more lift */
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+#save-balance-btn, #save-budgets-btn {
+    padding: 12px 22px;
+    font-size: 1em;
+    margin-left: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Spending Breakdown Charts */
+.spending-breakdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 520px; /* Even larger charts */
+    height: 400px; /* Adjusted height for better aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefefe; /* Consistent light background for charts */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Expense & Income Lists */
+.expense-list ul,
+.income-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.expense-list li,
+.income-list li {
+    background-color: #fcfdff;
+    border: 1px solid #e8f0f7;
+    border-radius: 15px;
+    margin-bottom: 18px;
+    padding: 20px 30px; /* More generous padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05em;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.expense-list li:hover,
+.income-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.expense-list li .expense-info,
+.income-list li .income-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.expense-list li .expense-date,
+.income-list li .income-date {
+    font-weight: normal;
+    color: #868e96;
+    font-size: 0.95em;
+    margin-bottom: 6px;
+}
+
+.expense-list li .expense-note,
+.income-list li .income-note {
+    font-weight: 600;
+    color: #343a40;
+    font-size: 1.15em;
+}
+
+.expense-list li .expense-amount {
+    color: #dc3545; /* Bright red for expenses */
+    font-weight: 700;
+    margin-left: 30px;
+    white-space: nowrap;
+    font-size: 1.3em;
+}
+
+.income-list li .income-amount-display {
+    color: #28a745; /* Green for income */
+    font-weight: 700;
+    margin-left: 30px;
+    white-space: nowrap;
+    font-size: 1.3em;
+}
+
+.expense-list li .expense-type,
+.income-list li .income-type { /* Reusing expense-type class for consistency */
+    font-style: italic;
+    color: #8eb7d6; /* Lighter, more subtle color for type */
+    margin-left: 15px;
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Bright red for delete */
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 25px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Budget and Pace Indicator Styles */
+.financial-summary .budget-input-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.financial-summary .budget-input-item input {
+    margin-bottom: 15px;
+    width: auto;
+    min-width: 160px;
+    text-align: center;
+}
+
+.financial-summary .budget-input-item button {
+    margin-top: 8px;
+    margin-left: 0;
+}
+
+.financial-summary .budget-info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 22px; /* Slightly more padding */
+}
+
+.financial-summary .budget-info p {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e9ecef; /* Lighter background for track */
+    border-radius: 12px; /* More rounded */
+    height: 16px; /* Thicker progress bar */
+    overflow: hidden;
+    margin-top: 12px;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 12px;
+    transition: width 0.6s ease-in-out, background-color 0.4s ease;
+}
+
+/* Progress bar colors - adjusted for brightness and consistency */
+.progress-bar.green {
+    background-color: #28a745; /* Brighter, fresh green */
+}
+.progress-bar.orange {
+    background-color: #fd7e14; /* Vibrant orange */
+}
+.progress-bar.red {
+    background-color: #dc3545; /* Bright red */
+}
+
+.pace-indicator-item #pace-yourself-info {
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+/* Pace indicator text colors - adjusted for brightness */
+.pace-indicator-item .green {
+    color: #28a745;
+}
+.pace-indicator-item .yellow {
+    color: #ffc107; /* Clear yellow */
+}
+.pace-indicator-item .red {
+    color: #dc3545;
+}
+.pace-indicator-item .gray {
+    color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .container {
+        padding: 40px;
+    }
+    h1 {
+        font-size: 2.8em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .financial-summary {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+    .chart-container {
+        max-width: 100%;
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    .container {
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+    h2 {
+        font-size: 1.8em;
+        margin-top: 40px;
+    }
+
+    .financial-summary {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .summary-item {
+        padding: 20px;
+    }
+
+    .spending-breakdown {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .chart-container {
+        height: 350px;
+    }
+
+    .expense-list li,
+    .income-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+    }
+
+    .expense-list li .expense-info,
+    .income-list li .income-info {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .expense-list li .expense-amount,
+    .income-list li .income-amount-display,
+    .expense-list li .expense-type,
+    .income-list li .income-type {
+        margin-left: 0;
+        margin-top: 10px;
+        align-self: flex-end; /* Align amount to the right */
+    }
+    .delete-btn {
+        margin-left: 0;
+        margin-top: 15px;
+        align-self: flex-end; /* Align button to the right */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    h2 {
+        font-size: 1.6em;
+        margin-top: 30px;
+    }
+    input[type="number"],
+    input[type="date"],
+    textarea,
+    select {
+        width: calc(100% - 24px);
+        padding: 12px;
+    }
+    button {
+        padding: 14px 25px;
+        font-size: 1.1em;
+    }
+    #save-balance-btn, #save-budgets-btn {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 12px;
+    }
+    .chart-container {
+        height: 300px;
+    }
+}
