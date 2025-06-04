@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Spend Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Spend Analyzer</h1>
+
+        <div class="financial-summary">
+            <div class="summary-item">
+                <label for="starting-balance">Starting Monthly Balance:</label>
+                <input type="number" id="starting-balance" value="0" min="0">
+                <button id="save-balance-btn">Save</button>
+            </div>
+            <div class="summary-item">
+                <p>Total Spent This Month: <span id="total-spent">₹ 0.00</span></p>
+            </div>
+            <div class="summary-item">
+                <p>Remaining Balance: <span id="remaining-balance">₹ 0.00</span></p>
+            </div>
+            <div class="summary-item">
+                <p>Total Income This Month: <span id="total-income">₹ 0.00</span></p>
+            </div>
+            <div class="summary-item">
+                <p>Net Income: <span id="net-income">₹ 0.00</span></p>
+            </div>
+            <div class="summary-item">
+                <p>Savings Rate: <span id="savings-rate">0.00%</span></p>
+            </div>
+            <div class="summary-item budget-input-item">
+                <label for="needs-budget">Needs Budget (₹):</label>
+                <input type="number" id="needs-budget" value="0" min="0">
+            </div>
+            <div class="summary-item budget-input-item">
+                <label for="wants-budget">Wants Budget (₹):</label>
+                <input type="number" id="wants-budget" value="0" min="0">
+                <button id="save-budgets-btn">Save Budgets</button>
+            </div>
+            <div class="summary-item budget-info">
+                <p>Needs Budget: <span id="budget-needs-info">₹ 0.00 / ₹ 0.00 (Spent)</span></p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar needs-progress"></div>
+                </div>
+            </div>
+            <div class="summary-item budget-info">
+                <p>Wants Budget: <span id="budget-wants-info">₹ 0.00 / ₹ 0.00 (Spent)</span></p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar wants-progress"></div>
+                </div>
+            </div>
+            <div class="summary-item pace-indicator-item">
+                <p>Spending Pace: <span id="pace-yourself-info"></span></p>
+            </div>
+            </div>
+
+        <div class="expense-entry">
+            <h2>Add New Expense</h2>
+            <div class="form-group">
+                <label for="expense-amount">Amount (₹):</label>
+                <input type="number" id="expense-amount" placeholder="e.g., 500" step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="expense-date">Date:</label>
+                <input type="date" id="expense-date">
+            </div>
+            <div class="form-group">
+                <label for="expense-note">Reason/Note:</label>
+                <textarea id="expense-note" placeholder="e.g., Groceries for the week, Coffee with friends"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="expense-subcategory">Sub-Category:</label>
+                <select id="expense-subcategory">
+                    <option value="">(Auto-detect or Select)</option>
+                    <optgroup label="Needs">
+                        <option value="Groceries">Groceries</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Health">Health</option>
+                        <option value="Education">Education</option>
+                        <option value="Housing">Housing</option>
+                        <option value="Utilities">Utilities</option>
+                    </optgroup>
+                    <optgroup label="Wants">
+                        <option value="Dining Out">Dining Out</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Hobbies">Hobbies</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Personal Care">Personal Care</option>
+                        <option value="Gifts">Gifts</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option value="Investment">Investment</option>
+                        <option value="Savings">Savings</option>
+                        <option value="Income">Income (Consider separate income tracking if significant)</option>
+                        <option value="Miscellaneous">Miscellaneous</option>
+                    </optgroup>
+                </select>
+            </div>
+            <button id="add-expense-btn">Add Expense</button>
+        </div>
+
+        <div class="income-entry">
+            <h2>Add New Income</h2>
+            <div class="form-group">
+                <label for="income-amount">Amount (₹):</label>
+                <input type="number" id="income-amount" placeholder="e.g., 50000" step="0.01" min="0">
+            </div>
+            <div class="form-group">
+                <label for="income-date">Date:</label>
+                <input type="date" id="income-date">
+            </div>
+            <div class="form-group">
+                <label for="income-note">Source/Note:</label>
+                <textarea id="income-note" placeholder="e.g., Monthly Salary, Freelance Payment"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="income-allocation">Intended Allocation:</label>
+                <select id="income-allocation">
+                    <option value="Unallocated">Unallocated</option>
+                    <option value="Needs">To Needs Budget</option>
+                    <option value="Wants">To Wants Budget</option>
+                    <option value="Savings/Investments">To Savings/Investments</option>
+                </select>
+            </div>
+            <button id="add-income-btn">Add Income</button>
+        </div>
+        <div class="spending-breakdown">
+            <h2>Spending Overview</h2>
+            <div class="chart-container">
+                <canvas id="needsWantsChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+
+        <div class="expense-list">
+            <h2>All Expenses</h2>
+            <ul id="expenses-ul">
+                </ul>
+        </div>
+
+        <div class="income-list">
+            <h2>All Income</h2>
+            <ul id="income-ul">
+            </ul>
+        </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
