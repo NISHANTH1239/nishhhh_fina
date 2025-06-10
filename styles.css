@@ -2,56 +2,57 @@
 body {
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
-    padding: 30px;
-    background-color: #f8f9fa; /* Very light gray-blue for a soft background */
+    padding: 20px; /* Slightly reduced padding for all devices by default */
+    background-color: #f8f9fa;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    color: #343a40; /* Darker gray for general text for better readability */
+    color: #343a40;
+    box-sizing: border-box; /* Ensure padding is included in element's total width/height */
 }
 
 .container {
-    background-color: #ffffff; /* Pure white for main content areas */
-    border-radius: 20px; /* Slightly more rounded for a modern, soft feel */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* A more pronounced, elegant shadow */
-    padding: 50px; /* More generous internal space */
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px; /* Reduced for a slightly more compact feel */
     width: 100%;
-    max-width: 1000px; /* Wider for more spacious layout */
+    max-width: 1000px;
     box-sizing: border-box;
 }
 
 h1, h2 {
-    color: #007bff; /* Vibrant primary blue for headings */
+    color: #007bff;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px; /* Slightly reduced margin */
     font-weight: 700;
 }
 
 h1 {
-    font-size: 3.2em; /* Larger and more impactful */
+    font-size: 3em; /* Slightly smaller for general consistency */
 }
 
 h2 {
-    font-size: 2.2em;
-    margin-top: 50px; /* More space above new sections */
+    font-size: 2em;
+    margin-top: 40px; /* Maintained good spacing */
 }
 
 /* Financial Summary Section */
 .financial-summary {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; /* Increased gap for breathing room */
-    margin-bottom: 40px;
-    padding: 25px;
-    background-color: #e9f7ff; /* Lighter background for summary */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Min width for summary items */
+    gap: 20px; /* Slightly reduced gap */
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #e9f7ff;
     border-radius: 15px;
-    box-shadow: inset 0 0 15px rgba(0, 123, 255, 0.05); /* Subtle inner shadow */
+    box-shadow: inset 0 0 15px rgba(0, 123, 255, 0.05);
 }
 
 .summary-item {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 18px; /* Slightly reduced padding */
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     text-align: center;
@@ -64,7 +65,7 @@ h2 {
 .summary-item label {
     font-weight: 600;
     color: #0056b3;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .summary-item input[type="number"] {
@@ -73,37 +74,37 @@ h2 {
     border: 1px solid #ced4da;
     border-radius: 8px;
     margin-bottom: 10px;
-    font-size: 1.1em;
+    font-size: 1em; /* Slightly smaller font for inputs */
     text-align: center;
 }
 
 .summary-item p {
     margin: 0;
-    font-size: 1.1em;
+    font-size: 1em; /* Slightly smaller font */
     color: #495057;
 }
 
 .summary-item span {
-    font-size: 1.5em;
+    font-size: 1.4em; /* Adjusted for balance */
     font-weight: bold;
-    color: #007bff; /* Main accent color */
-    display: block; /* Ensure span takes full width */
+    color: #007bff;
+    display: block;
     margin-top: 5px;
 }
 
 /* Budget Section */
 .budget-section {
     background-color: #f0f8ff;
-    padding: 30px;
+    padding: 25px; /* Reduced padding */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
 .budget-item {
-    margin-bottom: 25px;
-    padding: 15px;
+    margin-bottom: 20px; /* Reduced margin */
+    padding: 12px; /* Reduced padding */
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
@@ -112,29 +113,29 @@ h2 {
 .budget-item label {
     display: block;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #0056b3;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 .budget-item input[type="number"] {
-    width: calc(100% - 30px);
-    padding: 12px;
+    width: calc(100% - 24px); /* Adjusted width for padding */
+    padding: 10px;
     border: 1px solid #a8d6ff;
     border-radius: 8px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px; /* Reduced margin */
     background-color: #f7faff;
 }
 
 .progress-bar-container {
-    width: 90%;
+    width: 95%; /* Slightly wider for better visual */
     background-color: #e0e0e0;
     border-radius: 5px;
-    height: 15px;
+    height: 12px; /* Slightly thinner */
     overflow: hidden;
-    margin: 10px auto 15px auto;
+    margin: 8px auto 12px auto; /* Adjusted margins */
 }
 
 .progress-bar {
@@ -151,17 +152,17 @@ h2 {
 
 #budget-needs-info, #budget-wants-info {
     display: block;
-    font-size: 1em;
+    font-size: 0.95em; /* Slightly smaller */
     font-weight: 500;
     color: #555;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 #pace-yourself-info {
-    font-size: 1.1em;
+    font-size: 1em; /* Adjusted */
     font-weight: 600;
-    margin-top: 30px;
-    padding: 10px 15px;
+    margin-top: 25px; /* Adjusted */
+    padding: 8px 12px; /* Adjusted padding */
     border-radius: 10px;
 }
 #pace-yourself-info.green {
@@ -186,63 +187,65 @@ h2 {
 .form-section {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px; /* Space between expense and income forms */
-    margin-bottom: 40px;
+    gap: 25px; /* Reduced gap */
+    margin-bottom: 30px;
 }
 
 @media (min-width: 768px) {
     .form-section {
-        grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 .expense-form, .income-form {
     background-color: #f7faff;
-    padding: 30px;
+    padding: 25px; /* Reduced padding */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px; /* Reduced margin */
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px; /* Reduced margin */
     font-weight: 600;
     color: #333;
+    font-size: 0.95em; /* Slightly smaller label font */
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
-    width: calc(100% - 22px); /* Account for padding */
-    padding: 12px;
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px; /* Reduced padding */
     border: 1px solid #ced4da;
     border-radius: 8px;
-    font-size: 1em;
-    box-sizing: border-box; /* Include padding in width */
+    font-size: 0.95em; /* Adjusted font size */
+    box-sizing: border-box;
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 70px; /* Slightly smaller min-height */
 }
 
 /* Buttons */
 button {
     background-color: #007bff;
     color: white;
-    padding: 15px 25px;
+    padding: 12px 20px; /* Adjusted padding */
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1em; /* Adjusted font size */
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 15px;
+    margin-top: 12px; /* Adjusted margin */
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    width: auto; /* Ensure button width is responsive, not forced 100% unless specified */
 }
 
 button:hover {
@@ -262,41 +265,40 @@ button:disabled {
 /* Spending Breakdown / Charts */
 .spending-breakdown {
     background-color: #f0f8ff;
-    padding: 30px;
+    padding: 25px; /* Reduced padding */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     display: flex;
-    flex-wrap: wrap; /* Allows charts to wrap on smaller screens */
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Space between charts */
+    gap: 25px; /* Reduced gap */
 }
 
 .chart-container {
     width: 100%;
-    max-width: 450px; /* Max width for individual charts */
-    height: 400px; /* Fixed height for consistent chart size */
+    max-width: 450px;
+    height: 350px; /* Slightly smaller height for charts */
     background-color: #ffffff;
-    padding: 20px;
+    padding: 18px; /* Reduced padding */
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     box-sizing: border-box;
 }
 
-/* Ensure Chart.js canvas fills container */
 .chart-container canvas {
     max-width: 100%;
-    height: 100%; /* Make canvas fill its parent container */
+    height: 100%;
 }
 
 
 /* Expense and Income Lists */
 .expense-list, .income-list {
     background-color: #f7faff;
-    padding: 30px;
+    padding: 25px; /* Reduced padding */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .expense-list ul, .income-list ul {
@@ -306,15 +308,15 @@ button:disabled {
 
 .expense-list li, .income-list li {
     background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 15px;
+    padding: 15px; /* Reduced padding */
+    margin-bottom: 12px; /* Reduced margin */
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-    gap: 10px; /* Space between flex items */
+    flex-wrap: wrap;
+    gap: 8px; /* Reduced gap */
 }
 
 .expense-list li:last-child, .income-list li:last-child {
@@ -323,46 +325,47 @@ button:disabled {
 
 .expense-info, .income-info {
     flex-grow: 1;
-    margin-right: 15px;
+    margin-right: 10px; /* Adjusted margin */
+    min-width: 150px; /* Ensure a minimum width before wrapping */
 }
 
 .expense-date, .income-date {
-    font-size: 0.9em;
+    font-size: 0.85em; /* Slightly smaller */
     color: #6c757d;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 3px; /* Reduced margin */
 }
 
 .expense-note, .income-note {
     font-weight: 500;
     color: #343a40;
-    font-size: 1.1em;
+    font-size: 1em; /* Adjusted */
 }
 
 .expense-amount, .income-amount-display {
     font-weight: bold;
-    font-size: 1.2em;
-    color: #dc3545; /* Red for expenses */
-    flex-shrink: 0; /* Prevent from shrinking */
+    font-size: 1.1em; /* Adjusted */
+    color: #dc3545;
+    flex-shrink: 0;
 }
 
 .income-amount-display {
-    color: #28a745; /* Green for income */
+    color: #28a745;
 }
 
 .expense-type, .income-type {
-    font-size: 0.9em;
+    font-size: 0.85em; /* Adjusted */
     color: #6c757d;
     flex-shrink: 0;
-    margin-left: 10px;
+    margin-left: 8px; /* Adjusted margin */
 }
 
 .delete-btn {
     background-color: #dc3545;
-    padding: 8px 15px;
-    font-size: 0.9em;
-    margin-top: 0; /* Override default button margin */
-    box-shadow: none; /* Remove extra shadow */
+    padding: 7px 12px; /* Reduced padding */
+    font-size: 0.85em; /* Adjusted font size */
+    margin-top: 0;
+    box-shadow: none;
 }
 
 .delete-btn:hover {
@@ -372,23 +375,23 @@ button:disabled {
 }
 
 
-/* NEW: Month Navigation */
+/* Month Navigation */
 .month-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px auto;
+    margin: 25px auto; /* Adjusted margin */
     max-width: 600px;
-    padding: 15px 25px;
-    background-color: #f0f8ff; /* A lighter blue */
+    padding: 12px 20px; /* Reduced padding */
+    background-color: #f0f8ff;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .month-navigation button {
-    padding: 12px 20px;
-    font-size: 1em;
-    box-shadow: none; /* Remove extra shadow for these buttons */
+    padding: 10px 18px; /* Adjusted padding */
+    font-size: 0.95em; /* Adjusted font size */
+    box-shadow: none;
 }
 
 .month-navigation button:hover {
@@ -397,120 +400,150 @@ button:disabled {
 }
 
 #current-month-display {
-    font-size: 1.6em;
+    font-size: 1.5em; /* Adjusted font size */
     font-weight: 600;
-    color: #0056b3; /* Darker blue */
+    color: #0056b3;
 }
 
 
-/* Responsive Design */
+/* Responsive Design - Media Queries */
+
+/* Tablet & Smaller Desktop Screens */
 @media (max-width: 992px) {
     .container {
-        padding: 40px;
-        max-width: 90%;
-    }
-    h1 {
-        font-size: 2.8em;
-    }
-    h2 {
-        font-size: 2em;
-    }
-    .financial-summary {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 15px;
-    }
-    .container {
-        padding: 25px;
-        border-radius: 15px;
+        padding: 30px; /* Further reduced padding */
     }
     h1 {
         font-size: 2.5em;
-        margin-bottom: 30px;
     }
     h2 {
-        font-size: 1.8em;
-        margin-top: 40px;
+        font-size: 1.7em;
+    }
+    .financial-summary {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Allow smaller summary items */
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Minimal padding */
+    }
+    .container {
+        padding: 20px; /* Minimal container padding */
+        border-radius: 10px; /* Slightly less rounded for smaller screens */
+    }
+    h1 {
+        font-size: 2.2em; /* Smaller h1 */
+        margin-bottom: 25px;
+    }
+    h2 {
+        font-size: 1.5em; /* Smaller h2 */
+        margin-top: 30px;
     }
     .financial-summary, .budget-section, .expense-form, .income-form, .spending-breakdown, .expense-list, .income-list {
-        padding: 20px;
-        border-radius: 12px;
+        padding: 18px; /* Reduced padding for all sections */
+        border-radius: 10px;
+        margin-bottom: 25px;
     }
 
     .form-section {
         grid-template-columns: 1fr; /* Stack forms vertically */
+        gap: 20px; /* Reduced gap between stacked forms */
     }
 
     .spending-breakdown {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 20px; /* Reduced gap between charts */
     }
 
     .chart-container {
-        height: 350px;
+        height: 300px; /* Further reduced height for mobile charts */
+        padding: 15px; /* Reduced chart padding */
     }
 
     .expense-list li,
     .income-list li {
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px 20px;
-        margin-bottom: 15px;
+        padding: 12px 15px; /* Adjusted list item padding */
+        margin-bottom: 10px;
+        gap: 5px; /* Smaller gap in stacked list items */
     }
 
-    .expense-list li .expense-info,
-    .income-list li .income-info {
+    .expense-info,
+    .income-info {
         margin-right: 0;
-        width: 100%;
+        width: 100%; /* Ensure full width for info on mobile */
+        text-align: left; /* Align text left */
     }
 
-    .expense-list li .expense-amount,
-    .income-list li .income-amount-display,
-    .expense-list li .expense-type,
-    .income-list li .income-type {
-        margin-left: 0;
-        margin-top: 10px;
-        align-self: flex-end; /* Align amount to the right */
-    }
+    .expense-amount,
+    .income-amount-display,
+    .expense-type,
+    .income-type,
     .delete-btn {
-        margin-left: 0;
-        margin-top: 15px;
-        align-self: flex-end; /* Align button to the right */
+        margin-left: 0; /* Remove left margin */
+        margin-top: 8px; /* Adjusted top margin */
+        align-self: flex-end; /* Align amount/type/button to the right */
+        width: auto; /* Allow content to dictate width */
+    }
+
+    .delete-btn {
+        padding: 6px 10px; /* Smaller delete button */
+        font-size: 0.8em;
     }
 
     /* Month Navigation for smaller screens */
     .month-navigation {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px; /* Reduced gap */
+        padding: 10px 15px; /* Reduced padding */
+        margin: 20px auto; /* Adjusted margin */
     }
     .month-navigation button {
-        width: 100%;
+        width: 100%; /* Make buttons full width */
         margin-left: 0;
+        padding: 10px 15px; /* Adjusted padding */
+        font-size: 0.9em;
+    }
+    #current-month-display {
+        font-size: 1.3em; /* Slightly smaller for mobile */
     }
 }
 
-@media (max-width: 480px) {
+/* Very Small Mobile Devices (e.g., iPhone SE) */
+@media (max-width: 420px) {
+    body {
+        padding: 5px; /* Even less padding */
+    }
     .container {
-        padding: 20px;
+        padding: 15px; /* Even less container padding */
     }
     h1 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
-    .summary-item input[type="number"],
-    .budget-item input[type="number"],
+    h2 {
+        font-size: 1.3em;
+    }
+    .summary-item, .budget-item, .expense-form, .income-form, .chart-container, .expense-list li, .income-list li {
+        padding: 10px; /* Minimal padding for sections/items */
+    }
     .form-group input,
     .form-group textarea,
     .form-group select {
-        font-size: 0.95em;
-        padding: 10px;
+        font-size: 0.9em;
+        padding: 8px;
     }
     button {
-        padding: 12px 20px;
-        font-size: 1em;
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    .chart-container {
+        height: 250px; /* Smallest chart height */
+    }
+    .expense-note, .income-note {
+        font-size: 0.9em; /* Ensure notes don't take too much space */
     }
 }
